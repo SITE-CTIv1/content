@@ -1,5 +1,5 @@
 ## SITE Feed Integration
-
+The SITE Feed Integration enables automatic ingestion of Indicators of Compromise (IOCs) from the SITE Intelligence database into XSOAR.
 ## Overview
 Saudi Information Technology Company (SITE) empowers organizations with secure-by-design solutions that drive innovation and foster growth. Leveraging robust capabilities and strategic international partnerships, SITE delivers tailored services across cybersecurity, cloud computing, and systems integration, supporting businesses in today’s fast-evolving digital landscape. The SITE Feed Integration Integration for Palo Alto Cortex XSOAR enables automated ingestion of Indicators of Compromise (IOCs) directly from SITE Intelligence database into the Cortex XSOAR system. This integration allows security teams to streamline threat intelligence management by automatically fetching and categorizing IOCs. With capabilities to filter by severity, type, and last seen time, this integration is suitable for monitoring a variety of threat indicators.
 This integration supports ingestion of the following system objects:
