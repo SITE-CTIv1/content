@@ -1,0 +1,88 @@
+name: SITE Feed Integration
+display: SITE Feed Integration
+category: Data Enrichment & Threat Intelligence
+description: Ingests Indicators of Compromise
+detaileddescription: 'The SITE Feed Integration enables automatic ingestion of Indicators of Compromise (IOCs) from the SITE Intelligence database into XSOAR'
+
+sectionOrder:
+  - Connect
+  - Collect
+
+commonfields:
+  id: SITE-CTI-IOCIngestor
+  name: SITE Intelligence IOC Ingestion Integration
+  version: 1.0.0
+  description: "Automatically ingests Indicators of Compromise (IOCs) SITE Intelligence Platfrom into Palo Alto Cortex XSOAR."
+
+configuration:
+  - display: Platform Base URL
+    name: url
+    required: true
+    type: 12
+    section: Connect
+
+  - display: API ID
+    name: api_id
+    required: true
+    type: 4
+    section: Connect
+    description: "The unique identifier for API access."
+
+  - displaypassword: API Token
+    additionalinfo: "The API token for authenticating with the platform."
+    name: api_token
+    required: true
+    hiddenusername: true
+    type: 4
+    section: Connect
+
+  - display: Polling Interval (minutes)
+    name: polling_interval
+    required: true
+    defaultvalue: 10
+    type: 0
+    section: Collect
+    description: "Interval for fetching new IOCs."
+
+  - display: Severity Level
+    name: severity
+    required: true
+    type: 15
+    options:
+      - Low
+      - Medium
+      - High
+    section: Collect
+    description: "Severity level for filtering indicators."
+
+script: |
+  # Integration code provided for automatic ingestion of IOCs, included in a separate file
+
+commands:
+  - name: test-module
+    description: "Tests connectivity and API authentication."
+    script: test_module(client)
+
+  - name: site-get-indicators
+    description: "Fetches indicators from the platform and displays them in Cortex XSOAR."
+    arguments:
+      - name: limit
+        description: "Limit for the number of indicators to fetch."
+        required: false
+    outputs:
+      - contextPath: IOCIngestor.Indicator
+        description: "Details of fetched IOCs"
+        type: String
+
+  - name: fetch-indicators
+    description: "Fetches and creates indicators in Cortex XSOAR."
+    outputs:
+      - contextPath: IOCIngestor.FetchedIndicators
+        description: "Fetched indicators with context."
+        type: String
+
+version: 1.0.0
+
+tests:
+  - "test-module"
+  - "fetch-indicators"

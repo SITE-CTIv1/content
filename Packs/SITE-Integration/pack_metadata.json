@@ -1,0 +1,30 @@
+{
+    "name": "SITE Feed Integration x Palo Alto Networks Cortex XDR",
+    "description": "The SITE Feed Integration for XSOAR enables the automatic ingestion of IOCs from SITE Intelligence database.",
+    "support": "partner",
+    "currentVersion": "1.0.0",
+    "author": "SITE Intelligence",
+    "email": "cti@site.sa",
+    "categories": [
+        "Data Enrichment & Threat Intelligence"
+    ],
+    "tags": [
+        "Malware",
+        "Threat Intelligence",
+        "Relationship",
+        "Feed"
+    ],
+    "created": "2024-10-28T13:03:00Z",
+    "useCases": [
+        "Malware",
+        "Threat Intelligence Management"
+    ],
+    "keywords": [
+        "Threat Intelligence",
+        "Enrichment",
+        "SITE"
+    ],
+    "marketplaces": [
+        "xsoar"
+    ]
+}

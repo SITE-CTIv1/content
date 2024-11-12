@@ -1,0 +1,5 @@
+!site-get-indicators limit=5
+!site-get-indicators limit=10 severity=High indicator_type=Domain
+!fetch-indicators limit=10 severity=High indicator_type=IP
+!site-fetch-indicators limit=20
+!test-module
